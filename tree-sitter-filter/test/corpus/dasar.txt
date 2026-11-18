@@ -1,0 +1,148 @@
+==================
+string comparison
+==================
+
+status = "open"
+
+---
+
+(query
+  (comparison
+    field: (identifier)
+    value: (string)))
+
+==================
+number comparison
+==================
+
+priority >= 2
+
+---
+
+(query
+  (comparison
+    field: (identifier)
+    value: (number)))
+
+==================
+all comparison operators
+==================
+
+a != "x" and b > 1 and c < 2 and d <= 3
+
+---
+
+(query
+  (and_expression
+    left: (and_expression
+      left: (and_expression
+        left: (comparison
+          field: (identifier)
+          value: (string))
+        right: (comparison
+          field: (identifier)
+          value: (number)))
+      right: (comparison
+        field: (identifier)
+        value: (number)))
+    right: (comparison
+      field: (identifier)
+      value: (number))))
+
+==================
+boolean comparison
+==================
+
+archived = true
+
+---
+
+(query
+  (comparison
+    field: (identifier)
+    value: (boolean)))
+
+==================
+and binds more tightly than or
+==================
+
+a = 1 or b = 2 and c = 3
+
+---
+
+(query
+  (or_expression
+    left: (comparison
+      field: (identifier)
+      value: (number))
+    right: (and_expression
+      left: (comparison
+        field: (identifier)
+        value: (number))
+      right: (comparison
+        field: (identifier)
+        value: (number)))))
+
+==================
+parenthesized expression
+==================
+
+(a = 1 or b = 2) and c = 3
+
+---
+
+(query
+  (and_expression
+    left: (parenthesized
+      (or_expression
+        left: (comparison
+          field: (identifier)
+          value: (number))
+        right: (comparison
+          field: (identifier)
+          value: (number))))
+    right: (comparison
+      field: (identifier)
+      value: (number))))
+
+==================
+not expression
+==================
+
+not archived = true
+
+---
+
+(query
+  (not_expression
+    operand: (comparison
+      field: (identifier)
+      value: (boolean))))
+
+==================
+in list with three values
+==================
+
+status in ("open", "pending", "closed")
+
+---
+
+(query
+  (in_expression
+    field: (identifier)
+    values: (string)
+    values: (string)
+    values: (string)))
+
+==================
+contains expression
+==================
+
+title contains "invoice"
+
+---
+
+(query
+  (contains_expression
+    field: (identifier)
+    value: (string)))

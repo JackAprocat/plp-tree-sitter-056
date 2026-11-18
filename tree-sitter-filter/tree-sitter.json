@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT"
+  },
+  "grammars": [
+    {
+      "name": "filter",
+      "camelcase": "Filter",
+      "scope": "source.filter",
+      "file-types": ["filter"],
+      "highlights": "queries/highlights.scm"
+    }
+  ]
+}

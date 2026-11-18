@@ -1,0 +1,5 @@
+JavaScript query sample verification
+parse_has_error: False
+matches: 1
+matched call: console.log("debug")
+Comment and string examples were not captured.

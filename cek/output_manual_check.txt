@@ -1,0 +1,2 @@
+docs/conf.py: parse_error=False, TODO/FIXME=0, long_functions=[]
+examples/walk_tree.py: parse_error=False, TODO/FIXME=0, long_functions=[]

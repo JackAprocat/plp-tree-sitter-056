@@ -1,0 +1,3 @@
+fungsi sapa: 2 parameter
+fungsi tambah: 2 parameter
+fungsi jalankan: 1 parameter

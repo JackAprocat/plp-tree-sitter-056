@@ -1,0 +1,11 @@
+{
+  "name": "tree-sitter-filter",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.10"
+  },
+  "allowScripts": {
+    "tree-sitter-cli@0.25.10": true
+  }
+}
